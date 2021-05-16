@@ -7,20 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Octave.NET;
 namespace SimpleCalc
 {
     public partial class Form1 : Form
     {
-        string operaciones="";
+        OctaveContext octave;
         public Form1()
         {
             InitializeComponent();
             label1.Text = "";
+            OctaveSettings settings = new OctaveSettings();
+            settings.OctaveCliPath = @"C:\Users\sinoa\AppData\Local\Programs\GNU Octave\Octave-6.2.0\mingw64\bin\octave.bat";
+            OctaveContext.OctaveSettings = settings;
+            octave = new OctaveContext();
+      
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             label1.Text += "1";
         }
 
@@ -96,7 +102,21 @@ namespace SimpleCalc
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
-            label1.Text += "=";
+            string op = label1.Text.Replace('X','*');
+            label2.Text=octave.Execute(op);
         }
+      
+        private bool IsValidCharacter(char key)
+        {
+            char[] keys = { '1','2','3','4','5','6','7','8','9','0','+','-','x','/','=','.','X'};
+
+            foreach (char k in keys)
+                if (k == key)
+                    return true;
+
+            return false;
+        }
+
+      
     }
 }
