@@ -29,6 +29,7 @@ namespace SimpleCalc
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRest = new System.Windows.Forms.Button();
             this.buttonEqual = new System.Windows.Forms.Button();
@@ -47,12 +48,20 @@ namespace SimpleCalc
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonMin = new System.Windows.Forms.Button();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,16 +88,16 @@ namespace SimpleCalc
             this.tableLayoutPanel1.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(40, 137);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 161);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 218);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(421, 220);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // buttonRest
             // 
@@ -99,9 +108,9 @@ namespace SimpleCalc
             this.buttonRest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.buttonRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRest.ForeColor = System.Drawing.Color.White;
-            this.buttonRest.Location = new System.Drawing.Point(330, 165);
+            this.buttonRest.Location = new System.Drawing.Point(318, 168);
             this.buttonRest.Name = "buttonRest";
-            this.buttonRest.Size = new System.Drawing.Size(106, 50);
+            this.buttonRest.Size = new System.Drawing.Size(100, 49);
             this.buttonRest.TabIndex = 15;
             this.buttonRest.Text = "-";
             this.buttonRest.UseVisualStyleBackColor = false;
@@ -110,15 +119,15 @@ namespace SimpleCalc
             // buttonEqual
             // 
             this.buttonEqual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
-            this.buttonEqual.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonEqual.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonEqual.FlatAppearance.BorderSize = 0;
             this.buttonEqual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(140)))), ((int)(((byte)(204)))));
             this.buttonEqual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(129)))), ((int)(((byte)(186)))));
             this.buttonEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEqual.ForeColor = System.Drawing.Color.White;
-            this.buttonEqual.Location = new System.Drawing.Point(221, 165);
+            this.buttonEqual.Location = new System.Drawing.Point(213, 168);
             this.buttonEqual.Name = "buttonEqual";
-            this.buttonEqual.Size = new System.Drawing.Size(103, 50);
+            this.buttonEqual.Size = new System.Drawing.Size(99, 49);
             this.buttonEqual.TabIndex = 14;
             this.buttonEqual.Text = "=";
             this.buttonEqual.UseVisualStyleBackColor = false;
@@ -133,9 +142,9 @@ namespace SimpleCalc
             this.button0.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button0.ForeColor = System.Drawing.Color.White;
-            this.button0.Location = new System.Drawing.Point(112, 165);
+            this.button0.Location = new System.Drawing.Point(108, 168);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(103, 50);
+            this.button0.Size = new System.Drawing.Size(99, 49);
             this.button0.TabIndex = 13;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
@@ -150,9 +159,9 @@ namespace SimpleCalc
             this.buttonP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.buttonP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonP.ForeColor = System.Drawing.Color.White;
-            this.buttonP.Location = new System.Drawing.Point(3, 165);
+            this.buttonP.Location = new System.Drawing.Point(3, 168);
             this.buttonP.Name = "buttonP";
-            this.buttonP.Size = new System.Drawing.Size(103, 50);
+            this.buttonP.Size = new System.Drawing.Size(99, 49);
             this.buttonP.TabIndex = 12;
             this.buttonP.Text = ".";
             this.buttonP.UseVisualStyleBackColor = false;
@@ -167,9 +176,9 @@ namespace SimpleCalc
             this.buttonSum.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.buttonSum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSum.ForeColor = System.Drawing.Color.White;
-            this.buttonSum.Location = new System.Drawing.Point(330, 111);
+            this.buttonSum.Location = new System.Drawing.Point(318, 113);
             this.buttonSum.Name = "buttonSum";
-            this.buttonSum.Size = new System.Drawing.Size(106, 48);
+            this.buttonSum.Size = new System.Drawing.Size(100, 49);
             this.buttonSum.TabIndex = 11;
             this.buttonSum.Text = "+";
             this.buttonSum.UseVisualStyleBackColor = false;
@@ -184,9 +193,9 @@ namespace SimpleCalc
             this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(221, 111);
+            this.button9.Location = new System.Drawing.Point(213, 113);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(103, 48);
+            this.button9.Size = new System.Drawing.Size(99, 49);
             this.button9.TabIndex = 10;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
@@ -201,9 +210,9 @@ namespace SimpleCalc
             this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(112, 111);
+            this.button8.Location = new System.Drawing.Point(108, 113);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(103, 48);
+            this.button8.Size = new System.Drawing.Size(99, 49);
             this.button8.TabIndex = 9;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
@@ -218,9 +227,9 @@ namespace SimpleCalc
             this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(3, 111);
+            this.button7.Location = new System.Drawing.Point(3, 113);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(103, 48);
+            this.button7.Size = new System.Drawing.Size(99, 49);
             this.button7.TabIndex = 8;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
@@ -235,9 +244,9 @@ namespace SimpleCalc
             this.buttonMult.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.buttonMult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMult.ForeColor = System.Drawing.Color.White;
-            this.buttonMult.Location = new System.Drawing.Point(330, 57);
+            this.buttonMult.Location = new System.Drawing.Point(318, 58);
             this.buttonMult.Name = "buttonMult";
-            this.buttonMult.Size = new System.Drawing.Size(106, 48);
+            this.buttonMult.Size = new System.Drawing.Size(100, 49);
             this.buttonMult.TabIndex = 7;
             this.buttonMult.Text = "X";
             this.buttonMult.UseVisualStyleBackColor = false;
@@ -252,9 +261,9 @@ namespace SimpleCalc
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(221, 57);
+            this.button6.Location = new System.Drawing.Point(213, 58);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 48);
+            this.button6.Size = new System.Drawing.Size(99, 49);
             this.button6.TabIndex = 6;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
@@ -269,9 +278,9 @@ namespace SimpleCalc
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(112, 57);
+            this.button5.Location = new System.Drawing.Point(108, 58);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(103, 48);
+            this.button5.Size = new System.Drawing.Size(99, 49);
             this.button5.TabIndex = 5;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
@@ -286,9 +295,9 @@ namespace SimpleCalc
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 57);
+            this.button4.Location = new System.Drawing.Point(3, 58);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 48);
+            this.button4.Size = new System.Drawing.Size(99, 49);
             this.button4.TabIndex = 4;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
@@ -303,9 +312,9 @@ namespace SimpleCalc
             this.buttonDiv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.buttonDiv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDiv.ForeColor = System.Drawing.Color.White;
-            this.buttonDiv.Location = new System.Drawing.Point(330, 3);
+            this.buttonDiv.Location = new System.Drawing.Point(318, 3);
             this.buttonDiv.Name = "buttonDiv";
-            this.buttonDiv.Size = new System.Drawing.Size(106, 48);
+            this.buttonDiv.Size = new System.Drawing.Size(100, 49);
             this.buttonDiv.TabIndex = 3;
             this.buttonDiv.Text = "/";
             this.buttonDiv.UseVisualStyleBackColor = false;
@@ -320,9 +329,9 @@ namespace SimpleCalc
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(221, 3);
+            this.button3.Location = new System.Drawing.Point(213, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 48);
+            this.button3.Size = new System.Drawing.Size(99, 49);
             this.button3.TabIndex = 2;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
@@ -337,9 +346,9 @@ namespace SimpleCalc
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(112, 3);
+            this.button2.Location = new System.Drawing.Point(108, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 48);
+            this.button2.Size = new System.Drawing.Size(99, 49);
             this.button2.TabIndex = 1;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
@@ -356,7 +365,7 @@ namespace SimpleCalc
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 48);
+            this.button1.Size = new System.Drawing.Size(99, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
@@ -364,13 +373,54 @@ namespace SimpleCalc
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(37, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 119);
+            this.panel1.Size = new System.Drawing.Size(418, 119);
             this.panel1.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 40.25F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label4.Location = new System.Drawing.Point(44, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(326, 62);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "SimpleCalc";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(376, 74);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(39, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(313, 13);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(102, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            this.label1.TextChanged += new System.EventHandler(this.label1_TextChanged);
             // 
             // buttonDelete
             // 
@@ -381,11 +431,11 @@ namespace SimpleCalc
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(261, 356);
+            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
+            this.buttonDelete.Location = new System.Drawing.Point(225, 382);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(103, 48);
+            this.buttonDelete.Size = new System.Drawing.Size(99, 48);
             this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "<=";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
@@ -398,53 +448,99 @@ namespace SimpleCalc
             this.buttonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClear.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.ForeColor = System.Drawing.Color.White;
-            this.buttonClear.Location = new System.Drawing.Point(152, 356);
+            this.buttonClear.Location = new System.Drawing.Point(120, 382);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(103, 48);
+            this.buttonClear.Size = new System.Drawing.Size(99, 48);
             this.buttonClear.TabIndex = 2;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = false;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // label2
+            // panel2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(327, 80);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(39, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "0";
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.buttonMin);
+            this.panel2.Controls.Add(this.buttonClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(445, 30);
+            this.panel2.TabIndex = 4;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(327, 14);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(102, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(42, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "SimpleCalc";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonMin
+            // 
+            this.buttonMin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonMin.FlatAppearance.BorderSize = 0;
+            this.buttonMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMin.Image = ((System.Drawing.Image)(resources.GetObject("buttonMin.Image")));
+            this.buttonMin.Location = new System.Drawing.Point(345, 0);
+            this.buttonMin.Name = "buttonMin";
+            this.buttonMin.Size = new System.Drawing.Size(50, 30);
+            this.buttonMin.TabIndex = 1;
+            this.buttonMin.UseVisualStyleBackColor = true;
+            this.buttonMin.Click += new System.EventHandler(this.buttonMin_Click);
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonClose.FlatAppearance.BorderSize = 0;
+            this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
+            this.buttonClose.Location = new System.Drawing.Point(395, 0);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(50, 30);
+            this.buttonClose.TabIndex = 0;
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(512, 418);
+            this.ClientSize = new System.Drawing.Size(445, 438);
             this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.Opacity = 0.99D;
             this.Text = "Form1";
+            this.TopMost = true;
+            this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,10 +550,6 @@ namespace SimpleCalc
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button buttonRest;
-        private System.Windows.Forms.Button buttonEqual;
-        private System.Windows.Forms.Button button0;
-        private System.Windows.Forms.Button buttonP;
         private System.Windows.Forms.Button buttonSum;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
@@ -473,6 +565,16 @@ namespace SimpleCalc
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonMin;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonRest;
+        private System.Windows.Forms.Button buttonEqual;
+        private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.Button buttonP;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
